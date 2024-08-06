@@ -1,0 +1,43 @@
+ /* Check Array Is Palindrom */
+ #include<iostream>
+ using namespace std; 
+ 
+ void FillArray(int arr[100], int&  arrLength) { 
+ arrLength = 6; 
+ arr[0] = 10; 
+ arr[1] = 20; 
+ arr[2] = 30; 
+ arr[3] = 30; 
+ arr[4] = 20; 
+ arr[5] = 10; 
+ } 
+
+ void CopyArrayInReverseOrder(int arrSource[100], int arrDestination[100], int arrLength) { 
+         for (int i = 0; i < arrLength; i++) arrDestination[i] = arrSource[arrLength -1 - i];
+          
+} 
+
+bool CheckArraysAreSame(int arrSource[100], int arrDestination[100], int& arrLength){
+    
+    for (int i = 0; i < arrLength; i++)         if (arrSource[i]  != arrDestination[i]){
+          return 0;
+    }
+          return 1;
+   
+}
+
+int main() { 
+
+int arrSource[100], arrDestination[100], 
+arrLength ;
+
+  FillArray(arrSource, arrLength);     
+             CopyArrayInReverseOrder(arrSource, arrDestination, arrLength);     
+    if ((CheckArraysAreSame(arrSource, arrDestination, arrLength) == true) )
+       cout << "The Arrays"
+               " Is Palindrom";
+       else
+       cout << "The Array Is Not Palindrom";                
+      
+ return 0;
+}
